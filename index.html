@@ -443,10 +443,13 @@
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 20px 16px;
+      padding: 24px 20px 18px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
+      gap: 14px;
+      min-height: 110px;
       transition: box-shadow 0.2s, transform 0.2s;
     }
     .client-card:hover {
@@ -454,33 +457,32 @@
       transform: translateY(-1px);
     }
 
+    .client-logo {
+      height: 40px;
+      max-width: 120px;
+      object-fit: contain;
+    }
+
     .client-initial {
-      width: 36px;
-      height: 36px;
-      min-width: 36px;
+      width: 44px;
+      height: 44px;
       border-radius: 8px;
       background: var(--navy);
       color: var(--white);
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: 800;
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       letter-spacing: 0.3px;
     }
 
     .client-name {
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.2;
-    }
-
-    .client-tag {
-      font-size: 0.7rem;
+      font-size: 0.775rem;
+      font-weight: 600;
       color: var(--muted);
-      font-weight: 500;
-      margin-top: 2px;
+      text-align: center;
+      letter-spacing: 0.02em;
     }
 
     @media (max-width: 640px) {
@@ -546,75 +548,66 @@
       <div class="clients-grid">
 
         <div class="client-card">
+          <img class="client-logo" src="https://logo.clearbit.com/olacabs.com" alt="Ola"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="client-initial">OL</div>
-          <div>
-            <div class="client-name">Ola</div>
-            <div class="client-tag">ONDC TSP</div>
-          </div>
+          <div class="client-name">Ola</div>
         </div>
 
         <div class="client-card">
+          <img class="client-logo" src="https://logo.clearbit.com/loadshare.net" alt="Loadshare"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="client-initial">LS</div>
-          <div>
-            <div class="client-name">Loadshare</div>
-            <div class="client-tag">ONDC TSP</div>
-          </div>
+          <div class="client-name">Loadshare</div>
         </div>
 
         <div class="client-card">
+          <img class="client-logo" src="https://logo.clearbit.com/borzodelivery.com" alt="Borzo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="client-initial">BZ</div>
-          <div>
-            <div class="client-name">Borzo</div>
-            <div class="client-tag">ONDC TSP</div>
-          </div>
+          <div class="client-name">Borzo</div>
         </div>
 
         <div class="client-card">
+          <img class="client-logo" src="https://logo.clearbit.com/porter.in" alt="Porter"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="client-initial">PR</div>
-          <div>
-            <div class="client-name">Porter</div>
-            <div class="client-tag">ONDC TSP</div>
-          </div>
+          <div class="client-name">Porter</div>
         </div>
 
         <div class="client-card">
+          <img class="client-logo" src="https://logo.clearbit.com/qwqer.in" alt="Qwqer"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="client-initial">QW</div>
-          <div>
-            <div class="client-name">Qwqer</div>
-            <div class="client-tag">ONDC TSP</div>
-          </div>
+          <div class="client-name">Qwqer</div>
         </div>
 
         <div class="client-card">
+          <img class="client-logo" src="https://logo.clearbit.com/blitzdelivery.in" alt="Blitz"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="client-initial">BL</div>
-          <div>
-            <div class="client-name">Blitz</div>
-            <div class="client-tag">ONDC TSP</div>
-          </div>
+          <div class="client-name">Blitz</div>
         </div>
 
         <div class="client-card">
+          <img class="client-logo" src="https://logo.clearbit.com/zypp.app" alt="Zypp"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="client-initial">ZY</div>
-          <div>
-            <div class="client-name">Zypp</div>
-            <div class="client-tag">ONDC TSP</div>
-          </div>
+          <div class="client-name">Zypp</div>
         </div>
 
         <div class="client-card">
+          <img class="client-logo" src="https://logo.clearbit.com/yulu.bike" alt="Yulu"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="client-initial">YU</div>
-          <div>
-            <div class="client-name">Yulu</div>
-            <div class="client-tag">ONDC TSP</div>
-          </div>
+          <div class="client-name">Yulu</div>
         </div>
 
         <div class="client-card">
+          <img class="client-logo" src="https://logo.clearbit.com/swiggy.com" alt="Swiggy LSP"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="client-initial">SW</div>
-          <div>
-            <div class="client-name">Swiggy LSP</div>
-            <div class="client-tag">ONDC TSP</div>
-          </div>
+          <div class="client-name">Swiggy LSP</div>
         </div>
 
       </div>
