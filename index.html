@@ -1,131 +1,571 @@
 <!DOCTYPE html>
-<html>
-<title>MP2 Innovations - ONDC TSP (Technology Service Provider)</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    html,
-    body,
-    h1,
-    h2,
-    h3,
-    h4 {
-        font-family: "Lato", sans-serif
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MP2 Innovations is an ONDC-certified Technology Service Provider for logistics. We help businesses build, launch, and scale on the ONDC network.">
+  <title>MP2 Innovations — ONDC Logistics TSP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0F172A;
+      --navy-light:  #1E293B;
+      --accent:      #2563EB;
+      --accent-dark: #1D4ED8;
+      --accent-bg:   #EFF6FF;
+      --surface:     #F8FAFC;
+      --border:      #E2E8F0;
+      --text:        #1E293B;
+      --muted:       #64748B;
+      --white:       #FFFFFF;
     }
 
-    .mySlides {
-        display: none
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .w3-tag,
-    .fa {
-        cursor: pointer
+    /* ── Navigation ───────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
     }
 
-    .w3-tag {
-        height: 15px;
-        width: 15px;
-        padding: 0;
-        margin-top: 6px
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .float {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 130px;
-        background-color: #25d366;
-        color: #FFF;
-        border-radius: 50px;
-        text-align: center;
-        font-size: 30px;
-        box-shadow: 2px 2px 3px #999;
-        z-index: 100;
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+
+    .nav-cta {
+      background: var(--accent) !important;
+      color: var(--white) !important;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      transition: background 0.15s !important;
+    }
+    .nav-cta:hover { background: var(--accent-dark) !important; }
+
+    @media (max-width: 640px) {
+      .nav-links li:not(:last-child) { display: none; }
     }
 
-    .my-float {
-        margin-top: 16px;
+    /* ── Hero ─────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1E3A5F 100%);
+      padding: 96px 24px 104px;
+      text-align: center;
     }
-</style>
 
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37,99,235,0.15);
+      border: 1px solid rgba(37,99,235,0.35);
+      color: #93C5FD;
+      font-size: 0.775rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero h1 span { color: #60A5FA; }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #94A3B8;
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--white);
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.22);
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    /* ── Trust bar ────────────────────────────── */
+    .trust-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      text-align: center;
+    }
+    .trust-bar p {
+      font-size: 0.825rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .trust-bar strong { color: var(--text); }
+
+    /* ── Shared section styles ────────────────── */
+    section { padding: 80px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 500px;
+      line-height: 1.65;
+    }
+
+    .section-header { margin-bottom: 52px; }
+
+    /* ── Services ─────────────────────────────── */
+    #services { background: var(--white); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .service-card:hover {
+      box-shadow: 0 8px 32px rgba(15,23,42,0.09);
+      transform: translateY(-2px);
+    }
+
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      background: var(--accent-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.15rem;
+      color: var(--accent);
+    }
+
+    .service-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── Team ─────────────────────────────────── */
+    #team { background: var(--surface); }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 620px;
+    }
+
+    .team-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    .team-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .team-role {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .team-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── Contact ──────────────────────────────── */
+    #contact { background: var(--white); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 480px;
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      text-decoration: none;
+      transition: box-shadow 0.2s;
+    }
+    .contact-card:hover { box-shadow: 0 4px 16px rgba(15,23,42,0.08); }
+
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    .contact-icon.whatsapp { background: #DCFCE7; color: #16A34A; }
+    .contact-icon.email    { background: var(--accent-bg); color: var(--accent); }
+
+    .contact-card .label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    .contact-card strong {
+      font-size: 0.875rem;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    /* ── Footer ───────────────────────────────── */
+    footer {
+      background: var(--navy);
+      padding: 36px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+    .footer-logo span { color: #60A5FA; }
+
+    .footer-copy {
+      font-size: 0.775rem;
+      color: #64748B;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.775rem;
+      color: #94A3B8;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    @media (max-width: 640px) {
+      section { padding: 60px 20px; }
+      .hero   { padding: 68px 20px 76px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
 <body>
 
-    <!-- Content -->
-    <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
-
-        <div class="w3-panel">
-            <h1><b>MP2 ONDC TSP</b></h1>
-            <h4>#1 logistics ONDC TSP</h4>
-        </div>
-
-        <!-- Grid -->
-        <div class="w3-row w3-container">
-            <div class="w3-center w3-padding-64">
-                <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">What We Offer</span>
-            </div>
-            <div class="w3-col l3 m6 w3-teal w3-container w3-padding-32">
-                <h3>Logistics Seller TSP</h3>
-                <p>We will help you build, host and run ONDC Logistics Buyer App.<br> No dev work required!</p>
-            </div>
-
-            <div class="w3-col l3 m6 w3-blue-grey w3-container w3-padding-32">
-                <h3>Logistics Buyer TSP</h3>
-                <p>We will help you build, host and run ONDC Logistics Seller App.<br> No dev work required!</p>
-            </div>
-
-            <div class="w3-col l3 m6 w3-indigo w3-container w3-padding-32">
-                <h3>ONDC Consultation</h3>
-                <p>We will help you build in house logistics Buyer/Seller App and onboard you to ONDC Network</p>
-            </div>
-
-        </div>
-
-        <!-- Grid -->
-        <div class="w3-row-padding" id="about">
-            <div class="w3-center w3-padding-64">
-                <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Who We Are</span>
-            </div>
-
-            <div class="w3-third w3-margin-bottom">
-                <div class="w3-card-4">
-                    <div class="w3-container">
-                        <h3>Mahesh Herle</h3>
-                        <p class="w3-opacity">CEO & Founder</p>
-                        <p>Over 17 years of experince in tech industry and more than 10 years in logistics</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w3-third w3-margin-bottom">
-                <div class="w3-card-4">
-                    <div class="w3-container">
-                        <h3>Poornima Aithal</h3>
-                        <p class="w3-opacity">Founder & Tech Consultant</p>
-                        <p>Over 15 years of experince in tech industry building products. Ex Microsoft, Ex Adobe</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Contact -->
-        <div class="w3-center w3-padding-64" id="contact">
-            <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us </span>
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-            <a href="https://api.whatsapp.com/send?phone=+919900163002&text=Hello I need more info about your Logistics TSP"
-                class="float" target="_blank">
-                <i class="fa fa-whatsapp my-float"></i>
-            </a>
-        </div>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">MP2<span>.</span>in</a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="https://api.whatsapp.com/send?phone=+919900163002&text=Hello%20I%20need%20more%20info%20about%20your%20Logistics%20TSP"
+             target="_blank" class="nav-cta">Get in Touch</a>
+        </li>
+      </ul>
     </div>
+  </nav>
 
-    <script>
-        function myFunction() {
-        }
-    </script>
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-badge">
+      <i class="fa-solid fa-circle-check"></i>
+      Certified ONDC Technology Service Provider
+    </div>
+    <h1>Logistics on <span>ONDC</span>,<br>done right.</h1>
+    <p>MP2 Innovations helps logistics businesses build, launch, and scale on the ONDC network — without writing a single line of code.</p>
+    <div class="hero-actions">
+      <a href="https://api.whatsapp.com/send?phone=+919900163002&text=Hello%20I%20need%20more%20info%20about%20your%20Logistics%20TSP"
+         target="_blank" class="btn-primary">
+        <i class="fa-brands fa-whatsapp"></i> Talk to us on WhatsApp
+      </a>
+      <a href="#services" class="btn-secondary">
+        See what we offer <i class="fa-solid fa-arrow-down"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Trust bar -->
+  <div class="trust-bar">
+    <p>Trusted by logistics businesses across India &nbsp;&middot;&nbsp; <strong>17+ years</strong> of industry experience &nbsp;&middot;&nbsp; End-to-end ONDC onboarding</p>
+  </div>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">What We Offer</p>
+        <h2 class="section-title">Everything you need to go live on ONDC</h2>
+        <p class="section-sub">We handle the technology so you can focus on running your logistics business.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-truck"></i></div>
+          <h3>Logistics Seller TSP</h3>
+          <p>List your logistics services on the ONDC network. We build, host, and operate your Seller App — no development work required on your end.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-box-open"></i></div>
+          <h3>Logistics Buyer TSP</h3>
+          <p>Discover and procure logistics services through ONDC. We build, host, and operate your Buyer App — ready to go live from day one.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-handshake"></i></div>
+          <h3>ONDC Consultation</h3>
+          <p>Want to build in-house? We guide your team through custom Buyer/Seller App development and handle your complete ONDC network onboarding.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Who We Are</p>
+        <h2 class="section-title">Built by logistics &amp; tech veterans</h2>
+        <p class="section-sub">Decades of combined experience in enterprise technology and logistics operations.</p>
+      </div>
+      <div class="team-grid">
+
+        <div class="team-card">
+          <div class="avatar">MH</div>
+          <h3>Mahesh Herle</h3>
+          <p class="team-role">CEO &amp; Founder</p>
+          <p>17+ years in the tech industry with 10+ years focused on logistics. Deep expertise in scaling B2B platforms and ONDC network integrations.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="avatar">PA</div>
+          <h3>Poornima Aithal</h3>
+          <p class="team-role">Founder &amp; Tech Consultant</p>
+          <p>15+ years building enterprise products. Formerly at Microsoft and Adobe — brings world-class software engineering practices to every engagement.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Contact Us</p>
+        <h2 class="section-title">Ready to get started?</h2>
+        <p class="section-sub">Reach out and we'll walk you through the right solution for your business.</p>
+      </div>
+      <div class="contact-grid">
+
+        <a href="https://api.whatsapp.com/send?phone=+919900163002&text=Hello%20I%20need%20more%20info%20about%20your%20Logistics%20TSP"
+           target="_blank" class="contact-card">
+          <div class="contact-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+          <span class="label">WhatsApp</span>
+          <strong>+91 99001 63002</strong>
+        </a>
+
+        <a href="mailto:hello@mp2.in" class="contact-card">
+          <div class="contact-icon email"><i class="fa-solid fa-envelope"></i></div>
+          <span class="label">Email</span>
+          <strong>hello@mp2.in</strong>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <a href="#" class="footer-logo">MP2<span>.</span>in</a>
+      <p class="footer-copy">&copy; <span id="yr"></span> MP2 Innovations. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
 
 </body>
-
 </html>
