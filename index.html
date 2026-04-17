@@ -303,18 +303,13 @@
     }
 
     .avatar {
-      width: 52px;
-      height: 52px;
+      width: 72px;
+      height: 72px;
       border-radius: 50%;
-      background: var(--navy);
-      color: var(--white);
-      font-size: 1rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      object-fit: cover;
+      object-position: center top;
       margin-bottom: 18px;
-      letter-spacing: 0.5px;
+      border: 2px solid var(--border);
     }
 
     .team-card h3 {
@@ -658,7 +653,7 @@
       <div class="team-grid">
 
         <div class="team-card">
-          <div class="avatar">MH</div>
+          <img class="avatar" src="mahesh.jpeg" alt="Mahesh Herle">
           <h3>Mahesh Herle</h3>
           <p class="team-role">CEO &amp; Co-Founder</p>
           <p>A hands-on technology leader and serial entrepreneur with 19+ years across engineering and logistics. Co-founded and led Tsepak Technologies as CTO for nearly 11 years, then scaled engineering at LoadShare Networks as Senior Director. He brings rare depth across 0→1 product building and 1→100 scaling — equally comfortable in the weeds of system architecture and at the strategic altitude of a business.</p>
@@ -670,7 +665,7 @@
         </div>
 
         <div class="team-card">
-          <div class="avatar">PA</div>
+          <img class="avatar" src="poornima.jpeg" alt="Poornima Aithal">
           <h3>Poornima Aithal</h3>
           <p class="team-role">Co-Founder &amp; Tech Consultant</p>
           <p>A seasoned engineer and product builder with 17+ years at some of the world's most respected software companies. Spent nearly a decade at Adobe as a Computer Scientist, followed by 4+ years as Senior SDE at Microsoft. After consulting for LoadShare Networks on logistics platform development, she co-founded MP2 Innovations to make ONDC accessible to India's logistics ecosystem.</p>
