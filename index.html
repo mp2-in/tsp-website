@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MP2 Innovations is an ONDC-certified Technology Service Provider for logistics. We help businesses build, launch, and scale on the ONDC network.">
-  <title>MP2 Innovations — ONDC Logistics TSP</title>
+  <meta name="description" content="MP2 Innovations is an independent consultancy for logistics technology. Mahesh Herle and Poornima Aithal advise on ONDC, platform architecture, and engineering leadership — and build when you need them to.">
+  <title>MP2 Innovations — Logistics &amp; ONDC Technology Consulting</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -228,7 +228,7 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
 
@@ -365,7 +365,6 @@
       justify-content: center;
       font-size: 1rem;
     }
-    .contact-icon.whatsapp { background: #DCFCE7; color: #16A34A; }
     .contact-icon.email    { background: var(--accent-bg); color: var(--accent); }
 
     .contact-card .label {
@@ -481,6 +480,10 @@
       letter-spacing: 0.02em;
     }
 
+    @media (max-width: 720px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 640px) {
       section { padding: 60px 20px; }
       .hero   { padding: 68px 20px 76px; }
@@ -502,8 +505,8 @@
         <li><a href="#team">Team</a></li>
         <li><a href="#contact">Contact</a></li>
         <li>
-          <a href="https://api.whatsapp.com/send?phone=+919900163002&text=Hello%20I%20need%20more%20info%20about%20your%20Logistics%20TSP"
-             target="_blank" class="nav-cta">Get in Touch</a>
+          <a href="mailto:hello@mp2.in?subject=Consulting%20enquiry"
+             class="nav-cta">Get in Touch</a>
         </li>
       </ul>
     </div>
@@ -513,33 +516,33 @@
   <div class="hero">
     <div class="hero-badge">
       <i class="fa-solid fa-circle-check"></i>
-      Certified ONDC Technology Service Provider
+      Logistics &amp; ONDC technology consultants
     </div>
-    <h1>Logistics on <span>ONDC</span>,<br>done right.</h1>
-    <p>MP2 Innovations helps logistics businesses build, launch, and scale on the ONDC network — without writing a single line of code.</p>
+    <h1>Logistics tech expertise,<br><span>on demand</span>.</h1>
+    <p>MP2 Innovations is Mahesh and Poornima. We work directly with logistics companies on ONDC, platform architecture, and the engineering decisions that are expensive to get wrong.</p>
     <div class="hero-actions">
-      <a href="https://api.whatsapp.com/send?phone=+919900163002&text=Hello%20I%20need%20more%20info%20about%20your%20Logistics%20TSP"
-         target="_blank" class="btn-primary">
-        <i class="fa-brands fa-whatsapp"></i> Talk to us on WhatsApp
+      <a href="mailto:hello@mp2.in?subject=Consulting%20enquiry"
+         class="btn-primary">
+        <i class="fa-solid fa-envelope"></i> Talk to us
       </a>
       <a href="#services" class="btn-secondary">
-        See what we offer <i class="fa-solid fa-arrow-down"></i>
+        See what we do <i class="fa-solid fa-arrow-down"></i>
       </a>
     </div>
   </div>
 
   <!-- Trust bar -->
   <div class="trust-bar">
-    <p>ONDC TSP for <strong>9+ leading logistics providers</strong> across India &nbsp;&middot;&nbsp; <strong>17+ years</strong> of industry experience &nbsp;&middot;&nbsp; End-to-end ONDC onboarding</p>
+    <p>Worked with <strong>9+ leading logistics providers</strong> across India &nbsp;&middot;&nbsp; <strong>Decades</strong> of combined logistics &amp; engineering experience &nbsp;&middot;&nbsp; Advisory, architecture &amp; hands-on delivery</p>
   </div>
 
   <!-- Clients -->
   <section id="clients">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Our Clients</p>
+        <p class="section-label">Track Record</p>
         <h2 class="section-title">Trusted by India's leading logistics providers</h2>
-        <p class="section-sub">We have served as the ONDC Technology Service Provider for these companies, helping them onboard and operate on the ONDC network.</p>
+        <p class="section-sub">We've taken every one of these companies live on ONDC — building, integrating, and debugging alongside their engineering teams.</p>
       </div>
       <div class="clients-grid">
 
@@ -614,28 +617,34 @@
   <section id="services">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">What We Offer</p>
-        <h2 class="section-title">Everything you need to go live on ONDC</h2>
-        <p class="section-sub">We handle the technology so you can focus on running your logistics business.</p>
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title">Senior expertise, engaged directly</h2>
+        <p class="section-sub">Two engineers who have built this before. No account managers, no handoffs, no junior bench.</p>
       </div>
       <div class="services-grid">
 
         <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <h3>ONDC Advisory</h3>
+          <p>Going live on ONDC, or already live and stuck? We've built and operated Buyer and Seller Apps end to end, and we'll steer your team through the spec, the integration calls, and network onboarding.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+          <h3>Fractional CTO &amp; Eng Leadership</h3>
+          <p>Senior technical leadership without a full-time hire. Architecture reviews, hiring and team structure, and the decisions that set your engineering direction for the next two years.</p>
+        </div>
+
+        <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-truck"></i></div>
-          <h3>Logistics Seller TSP</h3>
-          <p>List your logistics services on the ONDC network. We build, host, and operate your Seller App — no development work required on your end.</p>
+          <h3>Logistics Platform Consulting</h3>
+          <p>Order flows, allocation, rider apps, tracking, and the systems around them. We've shipped this stack at scale and know where it tends to break.</p>
         </div>
 
         <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-box-open"></i></div>
-          <h3>Logistics Buyer TSP</h3>
-          <p>Discover and procure logistics services through ONDC. We build, host, and operate your Buyer App — ready to go live from day one.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-handshake"></i></div>
-          <h3>ONDC Consultation</h3>
-          <p>Want to build in-house? We guide your team through custom Buyer/Seller App development and handle your complete ONDC network onboarding.</p>
+          <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+          <h3>Custom Product Development</h3>
+          <p>Need it built, not just advised on? We take defined projects from architecture through delivery, and hand over code your own team can carry forward.</p>
         </div>
 
       </div>
@@ -647,8 +656,8 @@
     <div class="container">
       <div class="section-header">
         <p class="section-label">Who We Are</p>
-        <h2 class="section-title">Built by logistics &amp; tech veterans</h2>
-        <p class="section-sub">Serial entrepreneurs with decades of combined experience across enterprise software, logistics platforms, and ONDC.</p>
+        <h2 class="section-title">The two people you'll actually work with</h2>
+        <p class="section-sub">Serial entrepreneurs with decades of combined experience across enterprise software, logistics platforms, and ONDC. When you hire MP2, you get them — not a delivery team.</p>
       </div>
       <div class="team-grid">
 
@@ -656,7 +665,7 @@
           <img class="avatar" src="mahesh.jpeg" alt="Mahesh Herle">
           <h3>Mahesh Herle</h3>
           <p class="team-role">CEO &amp; Co-Founder</p>
-          <p>A hands-on technology leader and serial entrepreneur with 19+ years across engineering and logistics. Co-founded and led Tsepak Technologies as CTO for nearly 11 years, then scaled engineering at LoadShare Networks as Senior Director. He brings rare depth across 0→1 product building and 1→100 scaling — equally comfortable in the weeds of system architecture and at the strategic altitude of a business.</p>
+          <p>A hands-on technology leader and serial entrepreneur with 19+ years across engineering and logistics. Co-founded Tsepak Technologies and led it as CTO for nearly 11 years, then scaled engineering at LoadShare Networks as Senior Director. He has built products from the first line of code and grown them into systems that carry real logistics volume — and still spends his days close to the architecture.</p>
           <div class="career-tags">
             <span class="career-tag">Co-Founder, Prorouting</span>
             <span class="career-tag">Ex-LoadShare Networks</span>
@@ -668,7 +677,7 @@
           <img class="avatar" src="poornima.jpeg" alt="Poornima Aithal">
           <h3>Poornima Aithal</h3>
           <p class="team-role">Co-Founder &amp; Tech Consultant</p>
-          <p>A seasoned engineer and product builder with 17+ years at some of the world's most respected software companies. Spent nearly a decade at Adobe as a Computer Scientist, followed by 4+ years as Senior SDE at Microsoft. After consulting for LoadShare Networks on logistics platform development, she co-founded MP2 Innovations to make ONDC accessible to India's logistics ecosystem.</p>
+          <p>An engineer and product builder with 17+ years at the world's largest software companies — nearly a decade at Adobe as a Computer Scientist, then 4+ years as a Senior SDE at Microsoft. After consulting for LoadShare Networks on logistics platform development, she co-founded MP2 Innovations to make ONDC accessible to India's logistics ecosystem.</p>
           <div class="career-tags">
             <span class="career-tag">ONDC Specialist, Prorouting</span>
             <span class="career-tag">Ex-Microsoft</span>
@@ -685,17 +694,10 @@
     <div class="container">
       <div class="section-header">
         <p class="section-label">Contact Us</p>
-        <h2 class="section-title">Ready to get started?</h2>
-        <p class="section-sub">Reach out and we'll walk you through the right solution for your business.</p>
+        <h2 class="section-title">Let's talk about what you're building.</h2>
+        <p class="section-sub">Tell us where your platform is today and what's in the way. We'll tell you straight whether we're the right people to help.</p>
       </div>
       <div class="contact-grid">
-
-        <a href="https://api.whatsapp.com/send?phone=+919900163002&text=Hello%20I%20need%20more%20info%20about%20your%20Logistics%20TSP"
-           target="_blank" class="contact-card">
-          <div class="contact-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
-          <span class="label">WhatsApp</span>
-          <strong>+91 99001 63002</strong>
-        </a>
 
         <a href="mailto:hello@mp2.in" class="contact-card">
           <div class="contact-icon email"><i class="fa-solid fa-envelope"></i></div>
